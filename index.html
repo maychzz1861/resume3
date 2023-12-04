@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="navbar">
+  <div class="navbar-logo">
+    <a href="index.html"><i class="fas fa-home"></i></a>
+  </div>
+  <!-- Right-sided navbar links -->
+  <div class="navbar-links">
+    <a href="#about"><i class="fas fa-info-circle"></i> ABOUT</a>
+    <a href="java.html"><i class="fas fa-users"></i> JAVA</a>
+    <a href="api.html"><i class="fas fa-briefcase"></i> API</a>
+    <a href="#photos.html"><i class="fas fa-image"></i> PHOTOS</a>
+
+    <a href="#contact"><i class="fas fa-envelope"></i> CONTACT</a>
+  </div>
+  <!-- Hamburger icon for mobile -->
+  <a href="javascript:void(0)" class="navbar-toggle" onclick="toggleNavbar()">
+    <i class="fas fa-bars"></i>
+  </a>
+</div>
+<div class="slideshow-container">
+
+    <div class="mySlides">
+      <img src="/picture/team2.jpg" style="width:100%">
+      <div class="slide-text">
+        <h3>Welcome</h3>
+      </div>
+    </div>
+  
+    <div class="mySlides">
+      <img src="/picture/team3.jpg" style="width:100%">
+      <div class="slide-text">
+        <h3>to my</h3>
+      </div>
+    </div>
+  
+    <div class="mySlides">
+      <img src="/picture/team4.jpg" style="width:100%">
+      <div class="slide-text">
+        <h3>portfolio!</h3>
+      </div>
+    </div>
+    
+  </div>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+  
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+  
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+  
+      slideIndex++;
+  
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+  
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+  
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 1500); 
+    }
+  </script>
+  </body>
+  </html>

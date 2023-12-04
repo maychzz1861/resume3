@@ -1,0 +1,205 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body,
+  html {
+    height: 100%;
+    line-height: 1.8;
+    background-image: url('/picture/team5.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    font-family: "Raleway", sans-serif;
+  }
+  
+  
+  /* Navbar Styles */
+  .navbar {
+    background: linear-gradient(to right, #ff9999, #66ccff); /* ใช้ linear-gradient ในการไล่เฉดสี */
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+  
+  .navbar a {
+    text-decoration: none;
+    color: inherit;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .navbar-toggle {
+    display: none;
+  }
+  
+  .sidebar {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  /* Font Awesome Icons */
+  .navbar a i {
+    margin-right: 5px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .navbar-links {
+      display: none;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  
+    .sidebar {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+  
+    .sidebar a {
+      display: block;
+      padding: 15px 0;
+      border-bottom: 3px solid #fff;
+    }
+  }
+  
+  /* Slideshow Styles */
+  .slideshow-container {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .mySlides {
+    position: relative;
+    text-align: center;
+  }
+  
+  .mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* จัดการให้รูปภาพเต็มขนาดและปรับเพื่อรักษาอัตราส่วน */
+}
+
+  
+  .slideshow-container {
+    position: relative;
+    max-width: 1120px;
+    
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 8px; /* ปรับให้มีขอบโค้ง */
+    box-shadow: 0 50px 100px 0 rgba(0, 0, 0, 0.804); /* เพิ่มเงาด้านข้าง */
+}
+
+.mySlides {
+    display: none;
+}
+ /* CSS */
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 50px;
+  
+}
+  /* Navigation dots */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active {
+    background-color: #717171;
+  }
+/* ตั้งค่าภายนอก card */
+.card {
+    border: 1px solid #f4eeee8b;
+    border-radius: 8px;
+    box-shadow: 0 50px 100px 0 rgba(48, 47, 47, 0.804);
+    padding: 30px;
+    max-width: 800px;
+    margin: 30px auto; /* เพิ่ม margin เพื่อย้ายการ์ดลงข้างล่างอีก */
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    text-align: center; /* จัดให้ข้อความอยู่ตรงกลาง */
+    margin-top: 10px; /* เพิ่มระยะห่างด้านบน */
+    margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่าง */
+    
+  }
+  
+  
+  
+  /* ปรับลักษณะของเนื้อหาภายใน card */
+  .content {
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    color: #555;
+  }
+  
+  button {
+    padding: 6px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    text-align: center; /* จัดให้ข้อความอยู่ตรงกลาง */
+    margin-top: 10px; /* เพิ่มระยะห่างด้านบน */
+    margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่าง */
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+  }
+
+  
+  #result {
+    font-weight: bold;
+  }
+  

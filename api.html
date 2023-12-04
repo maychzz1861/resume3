@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="navbar">
+  <div class="navbar-logo">
+    <a href="index.html"><i class="fas fa-home"></i></a>
+  </div>
+  <!-- Right-sided navbar links -->
+  <div class="navbar-links">
+    <a href="#about"><i class="fas fa-info-circle"></i> ABOUT</a>
+    <a href="java.html"><i class="fas fa-users"></i> JAVA</a>
+    <a href="api.html"><i class="fas fa-briefcase"></i> API</a>
+    <a href="#photos.html"><i class="fas fa-image"></i> PHOTOS</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> CONTACT</a>
+  </div>
+</div>
+<div class="card">
+    <div class="content">
+        <h1>API</h1>
+
+        <hr>
+        <h2>Click to change</h2>
+        <p id="demo2">Hi</p>
+        <button onclick="myFunction()">Click me</button>
+        
+        <!-- End page content -->
+        </div>
+
+        
+        <script>
+          //document.getElementById("demo").innerHTML = "Hello World";
+        
+        
+          function myFunction() {
+            fetch("https://catfact.ninja/fact")
+              .then(function(response){
+                return response.json()
+              })
+              .then(function(data){
+                let txt = "";
+                  for (let x in data) {
+                    txt += data[x] + " ";
+                  document.getElementById("demo2").innerHTML = txt;
+                  };
+              
+                return data;
+              })  
+              
+         
+        }
+        
+        
+        </script>
+
+</body>
+</html>

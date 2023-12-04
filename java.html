@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="navbar">
+  <div class="navbar-logo">
+    <a href="index.html"><i class="fas fa-home"></i></a>
+  </div>
+  <!-- Right-sided navbar links -->
+  <div class="navbar-links">
+    <a href="#about"><i class="fas fa-info-circle"></i> ABOUT</a>
+    <a href="java.html"><i class="fas fa-users"></i> JAVA</a>
+    <a href="api.html"><i class="fas fa-briefcase"></i> API</a>
+    <a href="#photos.html"><i class="fas fa-image"></i> PHOTOS</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> CONTACT</a>
+  </div>
+</div>
+<div class="card">
+    <div class="content">
+  <h1>LAB</h1>
+
+  <hr>
+  <h2>Just change A - Z</h2>
+  <p id="demo">Hi</p>
+
+  <hr>
+  <h2>แปลงตัวอักษรตัวแรกของ str ให้เป็นตัวพิมพ์ใหญ่ส่วนตัวอักษรที่เหลือให้มีขนาดเหมือนเดิม</h2>
+    <p>
+        <label for="inputText">ก่อนแปลง: </label>
+        <input type="text" id="inputText">
+        <button onclick="showModifiedString()">แปลง</button>
+      </p>
+      
+      <p>หลังแปลง = <span id="modifiedString" class="output-box"></span></p>
+  <hr>
+  <h2>Calculate number</h2>
+  <label for="inputText">กรอกข้อความ: </label>
+  <input type="text" id="numb">
+  <button type="button" onclick="myFunction2()">ส่ง</button>
+  <p id="demo3"></p>
+  
+  
+  <hr>
+  <h2>คำนวณแต้มจากยอดซื้อขายโดยเฉพาะทุกยอดซื้อ100บาทจะได้1แต้ม</h2>
+  <button onclick="updatePoints()">คำนวณแต้ม</button>
+  <p>ยอดซื้อขาย: <span id="totalSales">500</span> บาท</p>
+<p>จำนวนแต้มที่ได้: <span id="loyaltyPoints"></span> แต้ม</p>
+
+
+<hr>
+<h2>หาความยาวเส้นรอบวงของวงกลม</h2>
+<button onclick="calculate()">คำนวณความยาว</button>
+<p id="result"></p>
+  <!-- End page content -->
+</div>
+
+<!-- Footer -->
+
+
+<script>
+  function printAlphabets() {
+    const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    alphabets.split('').forEach((alphabet, index) => {
+      setTimeout(() => {
+        document.getElementById("demo").innerHTML = alphabet;
+      }, index * 1000);
+    });
+  }
+  printAlphabets();
+
+  function myFunction() {
+    document.getElementById("demo2").innerHTML = "Hello World";
+  }
+
+  function myFunction2() {
+  let x = document.getElementById("numb").value;
+  let text;
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo3").innerText = text;
+}
+
+  function ucFirst(str) {
+    if (!str) return str;
+    const modifiedStr = str.charAt(0).toUpperCase() + str.slice(1);
+    return modifiedStr;
+  }
+
+  function ucFirst(str) {
+    if (!str) return str;
+    const modifiedStr = str.charAt(0).toUpperCase() + str.slice(1);
+    return modifiedStr;
+  }
+  function showModifiedString() {
+    const inputText = document.getElementById("inputText").value;
+    const modifiedString = ucFirst(inputText);
+
+    document.getElementById("modifiedString").innerText = modifiedString;
+  }
+
+  function calculateLoyaltyPoints(totalSales) {
+    let points = totalSales / 100;
+    points = Math.floor(points);
+    return points;
+  }
+
+  function updatePoints() {
+    const newTotalSales = prompt("กรุณากรอกยอดซื้อขายใหม่ (ในหน่วยบาท):");
+    const newPoints = calculateLoyaltyPoints(parseInt(newTotalSales));
+
+    if (!isNaN(newPoints)) {
+      document.getElementById("totalSales").innerText = newTotalSales;
+      document.getElementById("loyaltyPoints").innerText = newPoints;
+    } else {
+      alert("โปรดกรอกตัวเลขที่ถูกต้อง");
+    }
+  }
+  const totalSales = 360;
+  const loyaltyPoints = calculateLoyaltyPoints(totalSales);
+  document.getElementById("totalSales").innerText = totalSales;
+  document.getElementById("loyaltyPoints").innerText = loyaltyPoints;
+
+
+
+  function calculateCircleLength(radius) {
+    var PI = Math.PI;
+    var circleLength = PI * 2 * radius;
+    return circleLength;
+  }
+
+  function calculateCircleLength(radius) {
+    var PI = Math.PI;
+    var circleLength = PI * 2 * radius;
+    return circleLength;
+  }
+
+  function calculate() {
+    var radius = prompt("กรุณาใส่ค่ารัศมีของวงกลม:");
+
+    if (radius !== null && radius !== "") {
+      radius = parseInt(radius);
+
+      if (!isNaN(radius)) {
+        var length = calculateCircleLength(radius);
+        document.getElementById("result").innerText = "ความยาวเส้นรอบวงของวงกลมที่มีรัศมี " + radius + " คือ " + length;
+      } else {
+        alert("โปรดกรอกรัศมีของวงกลมให้ถูกต้อง");
+      }
+    }
+  }
+
+</script>
+
+</body>
+</html>
